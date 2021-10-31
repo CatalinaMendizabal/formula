@@ -61,7 +61,7 @@ public class Variable implements Function {
     public boolean isComposite() { return false; }
 
     @Override
-    public void accept(VisitorFunction visitor) throws IOException {
+    public void acceptVisitor(VisitorFunction visitor) throws IOException {
         visitor.visitVariable(this);
     }
 

@@ -8,14 +8,13 @@ public class SolveVisitor implements VisitorFunction {
     @Override
     public void visitVariable(Variable variable) {
         double value = variable.getValue();
-        Operand altOperand = variable.getOperand();
+        Operand operand = variable.getOperand();
 
-        if (altOperand == null) {
+        if (operand == null) {
             result = value;
             return;
         }
-
-        switch (altOperand) {
+        switch (operand) {
             case ABS:
                 result = Math.abs(value);
                 return;
@@ -23,57 +22,53 @@ public class SolveVisitor implements VisitorFunction {
                 result = Math.sqrt(value);
                 return;
         }
-
         result = value;
     }
 
     @Override
     public void visitExpression(Expression expression) throws IOException {
-        Operand operand = expression.getFirstOperand();
-        Operand altOperand = expression.getSecondOperand();
-        Function left = expression.getLeftFunction();
-        Function right = expression.getRightFunction();
-
         double result = 0;
 
-        switch (operand) {
+        Function leftFunction = expression.getLeftFunction();
+        Function rightFunction = expression.getRightFunction();
+        Operand firstOperand = expression.getFirstOperand();
+        Operand secondOperand = expression.getSecondOperand();
+
+        switch (firstOperand) {
             case ADD:
-                result = getResult(left) + getResult(right);
+                result = calculateResult(leftFunction) + calculateResult(rightFunction);
                 break;
             case SUBTRACT:
-                result = getResult(left) - getResult(right);
+                result = calculateResult(leftFunction) - calculateResult(rightFunction);
                 break;
             case MULTIPLY:
-                result = getResult(left) * getResult(right);
+                result = calculateResult(leftFunction) * calculateResult(rightFunction);
                 break;
             case DIVIDE:
-                result = getResult(left) / getResult(right);
+                result = calculateResult(leftFunction) / calculateResult(rightFunction);
                 break;
             case POW:
-                result = Math.pow(getResult(left), getResult(right));
+                result = Math.pow(calculateResult(leftFunction), calculateResult(rightFunction));
                 break;
 
         }
 
-        if(altOperand == null) {
-            this.result = result;
-            return;
-        }
-
-        switch (altOperand) {
-            case SQRT:
-                result = Math.sqrt(result);
-                break;
-            case ABS:
-                result = Math.abs(result);
-                break;
+        if (secondOperand != null) {
+            switch (secondOperand) {
+                case SQRT:
+                    result = Math.sqrt(result);
+                    break;
+                case ABS:
+                    result = Math.abs(result);
+                    break;
+            }
         }
 
         this.result = result;
     }
 
-    private double getResult(Function function) throws IOException {
-        function.accept(this);
+    private double calculateResult(Function function) throws IOException {
+        function.acceptVisitor(this);
         return result;
     }
 }

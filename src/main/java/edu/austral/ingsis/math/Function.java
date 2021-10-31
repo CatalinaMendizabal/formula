@@ -7,5 +7,5 @@ public interface Function {
 
     boolean isComposite();
 
-    void accept(VisitorFunction visitor) throws IOException;
+    void acceptVisitor(VisitorFunction visitor) throws IOException;
 }

@@ -1,8 +1,5 @@
 package edu.austral.ingsis.math;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Expression implements Function {
     Function leftFunction;
@@ -14,13 +11,6 @@ public class Expression implements Function {
         this.leftFunction = leftFunction;
         this.rightFunction = rightFunction;
         this.firstOperand = operand;
-    }
-
-    public Expression(Function leftFunction, Function rightFunction, Operand firstOperand, Operand secondOperand) {
-        this.leftFunction = leftFunction;
-        this.rightFunction = rightFunction;
-        this.firstOperand = firstOperand;
-        this.secondOperand = secondOperand;
     }
 
     public Function getLeftFunction() { return leftFunction; }
@@ -35,7 +25,6 @@ public class Expression implements Function {
     public String print() {
 
         StringBuilder builder = new StringBuilder();
-
         if (secondOperand != null) {
             switch (secondOperand) {
                 case ABS:
@@ -95,7 +84,7 @@ public class Expression implements Function {
     }
 
     @Override
-    public void accept(VisitorFunction visitor) throws IOException {
+    public void acceptVisitor(VisitorFunction visitor) throws IOException {
         visitor.visitExpression(this);
     }
 }

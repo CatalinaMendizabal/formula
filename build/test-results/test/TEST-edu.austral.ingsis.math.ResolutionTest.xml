@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.austral.ingsis.math.ResolutionTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T22:48:34" hostname="MacBook-Pro-de-Catalina.local" time="0.009">
+<testsuite name="edu.austral.ingsis.math.ResolutionTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T23:11:15" hostname="MacBook-Pro-de-Catalina.local" time="0.011">
   <properties/>
-  <testcase name="shouldResolveSimpleFunction1" classname="edu.austral.ingsis.math.ResolutionTest" time="0.004"/>
-  <testcase name="shouldResolveSimpleFunction2" classname="edu.austral.ingsis.math.ResolutionTest" time="0.001"/>
+  <testcase name="shouldResolveSimpleFunction1" classname="edu.austral.ingsis.math.ResolutionTest" time="0.008"/>
+  <testcase name="shouldResolveSimpleFunction2" classname="edu.austral.ingsis.math.ResolutionTest" time="0.0"/>
   <testcase name="shouldResolveSimpleFunction3" classname="edu.austral.ingsis.math.ResolutionTest" time="0.0"/>
   <testcase name="shouldResolveSimpleFunction4" classname="edu.austral.ingsis.math.ResolutionTest" time="0.0"/>
   <testcase name="shouldResolveSimpleFunction5" classname="edu.austral.ingsis.math.ResolutionTest" time="0.0"/>

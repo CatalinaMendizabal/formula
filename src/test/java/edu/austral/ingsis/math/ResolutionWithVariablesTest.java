@@ -3,7 +3,6 @@ package edu.austral.ingsis.math;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -18,7 +17,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction1() throws IOException {
         Function function = new Expression(new Variable(1d), Operand.ADD, new Variable("x", 3d));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(4d));
@@ -31,7 +30,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction2() throws IOException {
         Function function = new Expression(new Variable(12d), Operand.DIVIDE, new Variable("div", 4d));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(3d));
@@ -44,7 +43,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction3() throws IOException {
         Function function = new Expression(new Expression(new Variable(9d), Operand.DIVIDE, new Variable("x", 3d)), Operand.MULTIPLY, new Variable("y", 4d));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(12d));
@@ -57,7 +56,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction4() throws IOException {
         Function function = new Expression(new Expression(new Variable(27d), Operand.DIVIDE, new Variable("a", 9d)), Operand.POW, new Variable("b", 3d));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(27d));
@@ -70,7 +69,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction5() throws IOException {
         Function function = new Expression(new Variable("z", 36d), Operand.POW,new Expression(new Variable(1d), Operand.DIVIDE, new Variable( 2d)));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(6d));
@@ -89,7 +88,7 @@ public class ResolutionWithVariablesTest {
         }
         assert function != null;
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(0d));
@@ -108,7 +107,7 @@ public class ResolutionWithVariablesTest {
         }
         assert function != null;
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(0d));
@@ -121,7 +120,7 @@ public class ResolutionWithVariablesTest {
     public void shouldResolveFunction8() throws IOException {
         Function function = new Expression(new Expression(new Variable(5d), Operand.SUBTRACT, new Variable("i", 2d)), Operand.MULTIPLY, new Variable(8d));
         SolveVisitor solver = new SolveVisitor();
-        function.accept(solver);
+        function.acceptVisitor(solver);
 
         final Double result = solver.result;
         assertThat(result, equalTo(24d));

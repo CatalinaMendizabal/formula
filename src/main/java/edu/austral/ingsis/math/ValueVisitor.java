@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VariableVisitor implements VisitorFunction {
+public class ValueVisitor implements VisitorFunction {
 
     List<String> result = new ArrayList<>();
 
@@ -16,7 +16,7 @@ public class VariableVisitor implements VisitorFunction {
 
     @Override
     public void visitExpression(Expression expression) throws IOException {
-        expression.getLeftFunction().accept(this);
-        expression.getRightFunction().accept(this);
+        expression.getLeftFunction().acceptVisitor(this);
+        expression.getRightFunction().acceptVisitor(this);
     }
 }

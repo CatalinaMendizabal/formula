@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.austral.ingsis.math.ResolutionWithVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T22:48:34" hostname="MacBook-Pro-de-Catalina.local" time="0.003">
+<testsuite name="edu.austral.ingsis.math.ResolutionWithVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T23:11:15" hostname="MacBook-Pro-de-Catalina.local" time="0.004">
   <properties/>
-  <testcase name="shouldResolveFunction1" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.001"/>
+  <testcase name="shouldResolveFunction1" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
   <testcase name="shouldResolveFunction2" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
   <testcase name="shouldResolveFunction3" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
-  <testcase name="shouldResolveFunction4" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
+  <testcase name="shouldResolveFunction4" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.001"/>
   <testcase name="shouldResolveFunction5" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
   <testcase name="shouldResolveFunction6" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
   <testcase name="shouldResolveFunction7" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>
