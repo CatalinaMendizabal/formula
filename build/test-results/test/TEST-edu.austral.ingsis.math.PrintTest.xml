@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="edu.austral.ingsis.math.PrintTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-10-31T20:55:19" hostname="MacBook-Pro-de-Catalina.local" time="0.004">
+  <properties/>
+  <testcase name="shouldPrintFunction1" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction2" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction3" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction4" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction6" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction7" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <testcase name="shouldPrintFunction8" classname="edu.austral.ingsis.math.PrintTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
