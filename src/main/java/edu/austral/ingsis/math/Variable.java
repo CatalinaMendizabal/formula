@@ -19,6 +19,13 @@ public class Variable implements Function {
         this.operand = operand;
     }
 
+    public Variable(Double value, Operand operand) throws IOException {
+        if (operand != Operand.SQRT && operand != Operand.ABS)
+            throw new IOException("The operand is not valid the variable");
+        this.value = value;
+        this.operand = operand;
+    }
+
     public Variable(String name, Double value) {
         this.name = name;
         this.value = value;
@@ -28,19 +35,11 @@ public class Variable implements Function {
         this.value = value;
     }
 
-    @Override
-    public Double solve() {
+    public String getName() { return name; }
 
-        if (operand == null) return value;
+    public Double getValue() { return value; }
 
-        switch (operand) {
-            case SQRT:
-                return Math.sqrt(value);
-            case ABS:
-                return Math.abs(value);
-        }
-        return value;
-    }
+    public Operand getOperand() { return operand; }
 
     @Override
     public String print() {
@@ -59,19 +58,12 @@ public class Variable implements Function {
     }
 
     @Override
-    public boolean isComposite() {
-        return false;
-    }
+    public boolean isComposite() { return false; }
 
     @Override
-    public List<String> getNames() {
-        List<String> result = new ArrayList<>();
-        if (name != null) result.add(name);
-        return result;
+    public void accept(VisitorFunction visitor) throws IOException {
+        visitor.visitVariable(this);
     }
 
-    @Override
-    public void addNames(List<String> result) {
-        if (name != null) result.add(name);
-    }
+
 }

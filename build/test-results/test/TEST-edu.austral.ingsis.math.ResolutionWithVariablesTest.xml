@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.austral.ingsis.math.ResolutionWithVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T20:55:19" hostname="MacBook-Pro-de-Catalina.local" time="0.003">
+<testsuite name="edu.austral.ingsis.math.ResolutionWithVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T22:48:34" hostname="MacBook-Pro-de-Catalina.local" time="0.003">
   <properties/>
   <testcase name="shouldResolveFunction1" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.001"/>
   <testcase name="shouldResolveFunction2" classname="edu.austral.ingsis.math.ResolutionWithVariablesTest" time="0.0"/>

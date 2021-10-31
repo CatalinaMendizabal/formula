@@ -16,7 +16,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction1() {
         final String expected = "1 + 6";
-        Function function = new Expression(new Variable(1d), List.of(Operand.ADD), new Variable(6d));
+        Function function = new Expression(new Variable(1d), Operand.ADD, new Variable(6d));
         final String result = function.print();
 
         assertThat(result, equalTo(expected));
@@ -28,7 +28,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction2() {
         final String expected = "12 / 2";
-        Function function = new Expression(new Variable(12d), List.of(Operand.DIVIDE), new Variable(2d));
+        Function function = new Expression(new Variable(12d), Operand.DIVIDE, new Variable(2d));
         final String result = function.print();
 
         assertThat(result, equalTo(expected));
@@ -40,7 +40,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction3() {
         final String expected = "(9 / 2) * 3";
-        Function function = new Expression(new Expression(new Variable(9d), List.of(Operand.DIVIDE), new Variable(2d)), List.of(Operand.MULTIPLY), new Variable(3d));
+        Function function = new Expression(new Expression(new Variable(9d), Operand.DIVIDE, new Variable(2d)), Operand.MULTIPLY, new Variable(3d));
         final String result = function.print();
 
         assertThat(result, equalTo(expected));
@@ -52,7 +52,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction4() {
         final String expected = "(27 / 6) ^ 2";
-        Function function = new Expression(new Expression(new Variable(27d), List.of(Operand.DIVIDE), new Variable(6d)), List.of(Operand.POW), new Variable(2d));
+        Function function = new Expression(new Expression(new Variable(27d), Operand.DIVIDE, new Variable(6d)), Operand.POW, new Variable(2d));
         final String result = function.print();
 
         assertThat(result, equalTo(expected));
@@ -66,7 +66,7 @@ public class PrintTest {
         final String expected = "|value| - 8";
         Function function = null;
         try {
-            function = new Expression(new Variable("value", 8d, Operand.ABS), List.of(Operand.SUBTRACT), new Variable(8d));
+            function = new Expression(new Variable("value", 8d, Operand.ABS), Operand.SUBTRACT, new Variable(8d));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,7 +84,7 @@ public class PrintTest {
         final String expected = "|value| - 8";
         Function function = null;
         try {
-            function = new Expression(new Variable("value", -8d, Operand.ABS), List.of(Operand.SUBTRACT), new Variable(8d));
+            function = new Expression(new Variable("value", -8d, Operand.ABS), Operand.SUBTRACT, new Variable(8d));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -100,7 +100,7 @@ public class PrintTest {
     @Test
     public void shouldPrintFunction8() {
         final String expected = "(5 - i) * 8";
-        Function function = new Expression(new Expression(new Variable(5d), List.of(Operand.SUBTRACT), new Variable("i", 2d)), List.of(Operand.MULTIPLY), new Variable(8d));
+        Function function = new Expression(new Expression(new Variable(5d), Operand.SUBTRACT, new Variable("i", 2d)), Operand.MULTIPLY, new Variable(8d));
         final String result = function.print();
 
         assertThat(result, equalTo(expected));

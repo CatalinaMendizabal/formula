@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.austral.ingsis.math.ListVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T20:55:19" hostname="MacBook-Pro-de-Catalina.local" time="0.012">
+<testsuite name="edu.austral.ingsis.math.ListVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T22:48:34" hostname="MacBook-Pro-de-Catalina.local" time="0.01">
   <properties/>
-  <testcase name="shouldListVariablesFunction1" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.007"/>
+  <testcase name="shouldListVariablesFunction1" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.006"/>
   <testcase name="shouldListVariablesFunction2" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.001"/>
   <testcase name="shouldListVariablesFunction3" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
   <testcase name="shouldListVariablesFunction4" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
