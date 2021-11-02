@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.austral.ingsis.math.ListVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T20:55:19" hostname="MacBook-Pro-de-Catalina.local" time="0.012">
+<testsuite name="edu.austral.ingsis.math.ListVariablesTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-31T23:11:15" hostname="MacBook-Pro-de-Catalina.local" time="0.014">
   <properties/>
   <testcase name="shouldListVariablesFunction1" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.007"/>
-  <testcase name="shouldListVariablesFunction2" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.001"/>
+  <testcase name="shouldListVariablesFunction2" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.002"/>
   <testcase name="shouldListVariablesFunction3" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
   <testcase name="shouldListVariablesFunction4" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
   <testcase name="shouldListVariablesFunction5" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
   <testcase name="shouldListVariablesFunction6" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
-  <testcase name="shouldListVariablesFunction7" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
+  <testcase name="shouldListVariablesFunction7" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.001"/>
   <testcase name="shouldListVariablesFunction8" classname="edu.austral.ingsis.math.ListVariablesTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

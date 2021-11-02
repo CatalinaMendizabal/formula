@@ -15,21 +15,26 @@ public class ListVariablesTest {
      * Case 1 + 6
      */
     @Test
-    public void shouldListVariablesFunction1() {
-        Function function = new Expression(new Variable(1d), List.of(Operand.ADD), new Variable(6d));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction1() throws IOException {
+        Function function = new Expression(new Variable(1d), Operand.ADD, new Variable(6d));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, empty());
     }
+
 
     /**
      * Case 12 / div
      */
     @Test
-    public void shouldListVariablesFunction2() {
-        Function function = new Expression(new Variable(12d), List.of(Operand.DIVIDE), new Variable("div", 4d));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction2() throws IOException {
+        Function function = new Expression(new Variable(12d), Operand.DIVIDE, new Variable("div", 4d));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, containsInAnyOrder("div"));
     }
 
@@ -37,9 +42,12 @@ public class ListVariablesTest {
      * Case (9 / x) * y
      */
     @Test
-    public void shouldListVariablesFunction3() {
-        Function function = new Expression(new Expression(new Variable(9d), List.of(Operand.DIVIDE), new Variable("x", 3d)), List.of(Operand.MULTIPLY), new Variable("y", 4d));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction3() throws IOException {
+        Function function = new Expression(new Expression(new Variable(9d), Operand.DIVIDE, new Variable("x", 3d)), Operand.MULTIPLY, new Variable("y", 4d));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
+
+        final List<String> result = varVisitor.result;
 
         assertThat(result, containsInAnyOrder("x", "y"));
     }
@@ -48,9 +56,12 @@ public class ListVariablesTest {
      * Case (27 / a) ^ b
      */
     @Test
-    public void shouldListVariablesFunction4() {
-        Function function = new Expression(new Expression(new Variable(27d), List.of(Operand.DIVIDE), new Variable("a", 9d)), List.of(Operand.POW), new Variable("b", 3d));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction4() throws IOException {
+        Function function = new Expression(new Expression(new Variable(27d), Operand.DIVIDE, new Variable("a", 9d)), Operand.POW, new Variable("b", 3d));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
+
+        final List<String> result = varVisitor.result;
 
         assertThat(result, containsInAnyOrder("a", "b"));
     }
@@ -59,10 +70,12 @@ public class ListVariablesTest {
      * Case z ^ (1/2)
      */
     @Test
-    public void shouldListVariablesFunction5() {
-        Function function = new Expression(new Variable("z", 36d), List.of(Operand.POW),new Expression(new Variable(1d), List.of(Operand.DIVIDE), new Variable( 2d)));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction5() throws IOException {
+        Function function = new Expression(new Variable("z", 36d), Operand.POW,new Expression(new Variable(1d), Operand.DIVIDE, new Variable( 2d)));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, containsInAnyOrder("z"));
     }
 
@@ -70,16 +83,18 @@ public class ListVariablesTest {
      * Case |value| - 8
      */
     @Test
-    public void shouldListVariablesFunction6() {
+    public void shouldListVariablesFunction6() throws IOException {
         Function function = null;
         try {
-            function = new Expression(new Variable("value", 8d, Operand.ABS), List.of(Operand.SUBTRACT), new Variable(8d));
+            function = new Expression(new Variable("value", 8d, Operand.ABS), Operand.SUBTRACT, new Variable(8d));
         } catch (IOException e) {
             e.printStackTrace();
         }
         assert function != null;
-        final List<String> result = function.getNames();
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, containsInAnyOrder("value"));
     }
 
@@ -87,16 +102,18 @@ public class ListVariablesTest {
      * Case |value| - 8
      */
     @Test
-    public void shouldListVariablesFunction7() {
+    public void shouldListVariablesFunction7() throws IOException {
         Function function = null;
         try {
-            function = new Expression(new Variable("value", 8d, Operand.ABS), List.of(Operand.SUBTRACT), new Variable(8d));
+            function = new Expression(new Variable("value", 8d, Operand.ABS), Operand.SUBTRACT, new Variable(8d));
         } catch (IOException e) {
             e.printStackTrace();
         }
         assert function != null;
-        final List<String> result = function.getNames();
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, containsInAnyOrder("value"));
     }
 
@@ -104,10 +121,12 @@ public class ListVariablesTest {
      * Case (5 - i) * 8
      */
     @Test
-    public void shouldListVariablesFunction8() {
-        Function function = new Expression(new Expression(new Variable(5d), List.of(Operand.SUBTRACT), new Variable("i", 2d)), List.of(Operand.MULTIPLY), new Variable(8d));
-        final List<String> result = function.getNames();
+    public void shouldListVariablesFunction8() throws IOException {
+        Function function = new Expression(new Expression(new Variable(5d), Operand.SUBTRACT, new Variable("i", 2d)), Operand.MULTIPLY, new Variable(8d));
+        ValueVisitor varVisitor = new ValueVisitor();
+        function.acceptVisitor(varVisitor);
 
+        final List<String> result = varVisitor.result;
         assertThat(result, containsInAnyOrder("i"));
     }
 }

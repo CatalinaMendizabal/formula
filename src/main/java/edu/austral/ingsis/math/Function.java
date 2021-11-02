@@ -1,11 +1,11 @@
 package edu.austral.ingsis.math;
 
-import java.util.List;
+import java.io.IOException;
 
 public interface Function {
-    Double solve();
     String print();
-    List<String> getNames();
-    void addNames(List<String> result);
+
     boolean isComposite();
+
+    void acceptVisitor(VisitorFunction visitor) throws IOException;
 }
